@@ -53,6 +53,9 @@ body {
   --hero-video-contrast: 1.2;
   --hero-video-saturate: 1.45;
   --hero-video-brightness: 1.06;
+
+  /* Мобильный Safari: тонкий «мост» к системному верху (px под safe-area) */
+  --mobile-chrome-fade-extra: 18px;
 }
 
 body {
