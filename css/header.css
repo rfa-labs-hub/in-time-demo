@@ -15,9 +15,10 @@
     pointer-events: none;
     background: linear-gradient(
       to bottom,
-      rgba(255, 255, 255, 0.38) 0%,
-      rgba(255, 255, 255, 0.14) 38%,
-      rgba(255, 255, 255, 0.04) 68%,
+      #ffffff 0%,
+      #ffffff 6%,
+      rgba(255, 255, 255, 0.55) 22%,
+      rgba(255, 255, 255, 0.08) 52%,
       rgba(255, 255, 255, 0) 100%
     );
   }
