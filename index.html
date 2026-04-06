@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>In-Time — демо шапки</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/variables.css" />
+    <link rel="stylesheet" href="css/header.css" />
+  </head>
+  <body>
+    <div class="hero-stack">
+      <section class="hero" aria-label="Главный экран">
+        <div class="hero__media">
+          <video
+            class="hero__video"
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="metadata"
+            poster="files/video/poster.jpg"
+          >
+            <source src="files/video/hero.webm" type="video/webm" />
+            <source src="files/video/hero.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="hero__top-blur" aria-hidden="true"></div>
+        <div class="hero__scrim" aria-hidden="true"></div>
+        <div class="hero__inner">
+          <h1 class="hero__title">Подберем сотрудников под ваш бизнес за 7 дней</h1>
+          <p class="hero__subtitle">
+            От точечного подбора до полного закрытия вакансий - берем на себя весь процесс
+          </p>
+          <a class="hero__cta" href="#">Оставить заявку на подбор</a>
+        </div>
+      </section>
+
+      <header class="site-header site-header--on-hero site-header--bare" role="banner">
+        <a class="brand brand--bare" href="/" aria-label="In-Time — на главную">
+          <img
+            class="brand__logo"
+            src="files/images/logob.png"
+            alt=""
+            width="270"
+            height="72"
+            decoding="async"
+            fetchpriority="high"
+          />
+        </a>
+
+        <button
+          type="button"
+          class="nav__toggle"
+          aria-controls="primary-nav"
+          aria-expanded="false"
+          aria-label="Открыть меню"
+        >
+          <span class="nav__toggle-line" aria-hidden="true"></span>
+          <span class="nav__toggle-line" aria-hidden="true"></span>
+          <span class="nav__toggle-line" aria-hidden="true"></span>
+        </button>
+
+        <nav id="primary-nav" class="nav nav--bare" aria-label="Основное" aria-hidden="true">
+          <div class="nav__backdrop" aria-hidden="true"></div>
+          <div class="nav__drawer-panel">
+            <a class="nav__link nav__link--bare" href="#">Главная</a>
+            <a class="nav__link nav__link--bare" href="#">Оставить заявку на подбор</a>
+            <a class="nav__link nav__link--bare" href="#">Отправить резюме</a>
+            <a class="nav__link nav__link--bare" href="#">Успешные кейсы</a>
+          </div>
+        </nav>
+      </header>
+    </div>
+
+    <div class="preview-spacer" aria-hidden="true"></div>
+
+    <script src="js/hero-video.js" defer></script>
+    <script src="js/nav.js" defer></script>
+  </body>
+</html>

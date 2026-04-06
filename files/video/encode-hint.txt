@@ -1,0 +1,36 @@
+Снижение лагов: уменьшите разрешение и битрейт (цель ~2–5 Мбит/с для фона).
+
+--- Windows: команда ffmpeg не найдена ---
+
+FFmpeg не входит в Windows. Сначала установите, затем обязательно обновите PATH в оболочке.
+
+Установка (winget):
+  winget install --id Gyan.FFmpeg -e
+
+После сообщения «Успешно установлено» и «Перезапустите оболочку» старый PowerShell ещё не видит ffmpeg. Сделайте одно из двух:
+
+  1) Полностью закройте окно PowerShell / Cursor Terminal и откройте новое — затем снова: ffmpeg -version
+
+  2) В том же окне PowerShell выполните (подхватит обновлённый PATH без перезапуска):
+     $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
+
+Обычно WinGet кладёт ffmpeg сюда (имя папки может чуть отличаться):
+  %LOCALAPPDATA%\Microsoft\WinGet\Packages\...\ffmpeg-*-full_build\bin\ffmpeg.exe
+
+Если нужно вызвать без PATH, подставьте полный путь к ffmpeg.exe из папки ...\bin\.
+
+Альтернативы установки: Chocolatey (choco install ffmpeg) или архив с https://www.gyan.dev/ffmpeg/builds/ и добавление bin в PATH вручную.
+
+После установки проверка:
+  ffmpeg -version
+
+Без FFmpeg: постер можно сделать кадром из VLC (Видео — Сделать снимок) или любым редактором/онлайн-конвертером, сохранить как poster.jpg в эту папку.
+
+--- Примеры команд (когда ffmpeg в PATH) ---
+
+ffmpeg -i hero-source.mp4 -an -vf "scale=-2:min(1080\,iw)" -c:v libx264 -preset slow -crf 26 -movflags +faststart hero.mp4
+
+ffmpeg -i hero-source.mp4 -an -vf "scale=-2:min(1080\,iw)" -c:v libvpx-vp9 -crf 35 -b:v 0 hero.webm
+
+Постер (кадр на 1 с):
+ffmpeg -i hero.mp4 -ss 00:00:01 -vframes 1 -q:v 2 poster.jpg

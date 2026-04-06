@@ -1,0 +1,60 @@
+/* In-Time × Finovate — токены */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+}
+
+:root {
+  --color-brand: #8cc63f;
+  --color-brand-hover: #6fa832;
+  --color-heading: #1a2421;
+  --color-body: #666666;
+  --color-bg-page: #f7f7f7;
+  --color-bg-card: #ffffff;
+  --color-text-on-brand: #ffffff;
+
+  --glass-bg: rgba(255, 255, 255, 0.42);
+  --glass-border: rgba(255, 255, 255, 0.55);
+  --glass-shadow: 0 8px 32px rgba(26, 36, 33, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.65);
+  --glass-blur: 18px;
+
+  --radius-pill: 999px;
+  --radius-shell: 20px;
+  /* нижние углы полноширинной шапки — меньше, чем общие карточки */
+  --radius-nav-bottom: 10px;
+  --font-sans: "Manrope", system-ui, sans-serif;
+
+  /* Общий отступ слева/справа: логотип и текст hero на одной вертикали */
+  --layout-gutter-x: clamp(1rem, 4vw, 2rem);
+
+  /* Сдвиг логотипа и блока hero вправо (px) */
+  --content-shift-right: 60px;
+
+  /* Акцент бренда: изумруд (премиальный, без неона — спокойный насыщенный зелёный) */
+  --logo-color: #10b981;
+  --logo-color-filter: brightness(0) saturate(100%) invert(48%) sepia(79%) saturate(2476%)
+    hue-rotate(134deg) brightness(102%) contrast(96%);
+
+  /* Отступ шапки от верха экрана (px) — для темы WP */
+  --header-offset-top: 20px;
+
+  /* Верх hero: зона под шапку — затемнение + blur для читаемости текста */
+  --hero-top-blur-height: min(32vh, 240px);
+  --hero-top-blur-amount: 28px;
+
+  /* Hero-видео: цветокор в браузере (1 = без изменений) */
+  --hero-video-contrast: 1.2;
+  --hero-video-saturate: 1.45;
+  --hero-video-brightness: 1.06;
+}
+
+body {
+  font-family: var(--font-sans);
+}
